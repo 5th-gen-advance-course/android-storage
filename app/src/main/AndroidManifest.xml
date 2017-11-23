@@ -17,13 +17,19 @@
             </intent-filter>-->
         </activity>
         <activity android:name=".InternalStorageActivity" />
-        <activity android:name=".DatabaseActivity" />
-        <activity android:name=".SongListActivity">
+        <activity android:name=".DatabaseActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".SongListActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
     </application>
 

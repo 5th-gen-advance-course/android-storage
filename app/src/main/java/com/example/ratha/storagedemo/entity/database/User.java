@@ -1,6 +1,7 @@
 package com.example.ratha.storagedemo.entity.database;
 
 import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
@@ -13,7 +14,7 @@ import java.io.Serializable;
 @Entity
 public class User implements Serializable{
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
     @ColumnInfo(name="first_name")
     private String firstName;
@@ -23,6 +24,10 @@ public class User implements Serializable{
     private String email;
     @ColumnInfo(name="password")
     private String password;
+
+
+    @Embedded
+    private Address address;
 
     public User() {}
 
@@ -72,6 +77,14 @@ public class User implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
